@@ -1,0 +1,221 @@
+@font-face {
+  font-family: 'Coelacanth';
+  src: local('Coelacanth'), local('Coelacanth-Regular');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+font-family: 'Coelacanth', serif;
+padding: 15px;
+min-width: 320px;
+background: #faf8f3;
+color: #2c2416;
+}
+
+#pomodoroContainer {
+text-align: center;
+padding: 20px 10px;
+background: #f5f1e8;
+border: 1px solid #d4c5a9;
+border-radius: 2px;
+margin-bottom: 20px;
+box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#pomodoroTabs {
+display: flex;
+gap: 8px;
+justify-content: center;
+margin-bottom: 20px;
+}
+
+.pomo-tab {
+padding: 8px 16px;
+border: 1px solid #8b7355;
+background: #e8dcc8;
+border-radius: 2px;
+cursor: pointer;
+font-size: 12px;
+font-family: 'Coelacanth', 'Georgia', serif;
+transition: all 0.3s;
+color: #2c2416;
+}
+
+.pomo-tab:hover {
+background: #d4c5a9;
+}
+
+.pomo-tab.active {
+background: #8b4513;
+color: #faf8f3;
+border-color: #6b3410;
+}
+
+#pomodoroTimer {
+font-size: 48px;
+font-weight: normal;
+margin: 20px 0;
+color: #2c2416;
+font-family: 'Coelacanth', 'Georgia', serif;
+letter-spacing: 2px;
+}
+
+#pomodoroStart {
+padding: 12px 40px;
+font-size: 16px;
+font-weight: normal;
+background: #8b4513;
+color: #faf8f3;
+border: 1px solid #6b3410;
+border-radius: 2px;
+cursor: pointer;
+transition: all 0.3s;
+font-family: 'Coelacanth', 'Georgia', serif;
+letter-spacing: 1px;
+}
+
+#pomodoroStart:hover {
+background: #6b3410;
+}
+
+#pomodoroStart.running {
+background: #faf8f3;
+color: #8b4513;
+border: 2px solid #8b4513;
+}
+
+
+.modal {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+height: 100vh;
+}
+
+
+textarea {
+width: 300px;
+height: 100px;
+margin-bottom: 10px;
+}
+
+
+button {
+padding: 8px 12px;
+font-family: 'Coelacanth', 'Georgia', serif;
+background: #8b4513;
+color: #faf8f3;
+border: 1px solid #6b3410;
+border-radius: 2px;
+cursor: pointer;
+transition: all 0.3s;
+}
+
+button:hover {
+background: #6b3410;
+}
+
+h3 {
+font-family: 'Coelacanth', 'Georgia', serif;
+font-weight: normal;
+font-size: 18px;
+color: #2c2416;
+text-align: center;
+margin: 20px 0 15px 0;
+letter-spacing: 1px;
+}
+
+label {
+font-family: 'Coelacanth', 'Georgia', serif;
+color: #2c2416;
+}
+
+input[type="number"] {
+font-family: 'Coelacanth', 'Georgia', serif;
+padding: 6px 10px;
+border: 1px solid #d4c5a9;
+border-radius: 2px;
+background: #faf8f3;
+color: #2c2416;
+width: 60px;
+}
+
+.ornamental-divider {
+text-align: center;
+margin: 25px 0;
+position: relative;
+height: 20px;
+}
+
+.ornamental-divider::before {
+content: '';
+position: absolute;
+left: 0;
+right: 0;
+top: 50%;
+height: 1px;
+background: linear-gradient(to right, transparent, #8b7355 20%, #8b7355 80%, transparent);
+z-index: 0;
+}
+
+.ornamental-divider::after {
+content: '\271D';
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+background: #faf8f3;
+padding: 0 15px;
+color: #8b7355;
+font-size: 26px;
+font-family: Arial, sans-serif;
+font-weight: normal;
+z-index: 1;
+display: block;
+}
+
+.ornamental-divider-popup {
+text-align: center;
+margin: 25px 0;
+position: relative;
+height: 20px;
+}
+
+.ornamental-divider-popup::before {
+content: '';
+position: absolute;
+left: 0;
+right: 0;
+top: 50%;
+height: 1px;
+background: linear-gradient(to right, transparent, #8b7355 20%, #8b7355 80%, transparent);
+z-index: 0;
+}
+
+.ornamental-divider-popup::after {
+content: '\2720';
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+background: #faf8f3;
+padding: 0 15px;
+color: #8b7355;
+font-size: 20px;
+font-family: Arial, sans-serif;
+font-weight: normal;
+z-index: 1;
+display: block;
+}
+
+.button-group {
+display: flex;
+gap: 10px;
+}
+
+.button-group button {
+flex: 1;
+min-width: 100px;
+}

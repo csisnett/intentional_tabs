@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="pomodoroContainer">
+<div id="pomodoroTabs">
+<button class="pomo-tab active" data-mode="pomodoro">Pomodoro</button>
+<button class="pomo-tab" data-mode="shortBreak">Short Break</button>
+<button class="pomo-tab" data-mode="longBreak">Long Break</button>
+</div>
+<div id="pomodoroTimer">25:00</div>
+<button id="pomodoroStart">START</button>
+</div>
+
+<div class="ornamental-divider-popup"></div>
+
+<h3>Intentional Tabs</h3>
+
+
+<label>Max tabs allowed:</label>
+<input type="number" id="maxTabs" min="1">
+<button id="save">Save</button>
+<div id="currentTabCount"></div>
+
+<div class="ornamental-divider-popup"></div>
+
+<h3>Tab Lockdown</h3>
+<div id="lockdownControls">
+<div id="lockdownPomodoroButton" style="display: none;">
+<button id="lockdownWithPomodoro">Lockdown Tabs Until Pomodoro Ends</button>
+</div>
+<div id="lockdownManualControls" style="display: none;">
+<label>Lockdown duration (minutes):</label>
+<input type="number" id="lockdownMinutes" min="1" placeholder="e.g., 30">
+<button id="lockdownManual">Start</button>
+</div>
+</div>
+<div id="lockdownStatus"></div>
+
+<div class="ornamental-divider-popup"></div>
+
+<h3>Self-Destruct Timer</h3>
+
+<label>Timer duration (minutes):</label>
+<input type="number" id="destructTimer" min="1" placeholder="e.g., 5">
+<button id="enableDestruct">Start</button>
+<div id="destructStatus"></div>
+
+<div class="ornamental-divider-popup"></div>
+
+<button id="view">View Activity</button>
+<div id="log"></div>
+
+
+<script src="popup.js"></script>
+</body>
+</html>

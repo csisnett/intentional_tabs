@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="styles.css">
+<style>
+  body {
+    padding: 30px;
+    font-family: 'Coelacanth', 'Georgia', serif;
+    background: #faf8f3;
+    color: #2c2416;
+  }
+  .activity-container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .scripture-header {
+    text-align: center;
+    margin: 30px 0 40px 0;
+    padding: 25px;
+    background: #f5f1e8;
+    border: 1px solid #d4c5a9;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .scripture-header h1 {
+    font-family: 'Coelacanth', 'Georgia', serif;
+    font-weight: normal;
+    font-size: 32px;
+    color: #2c2416;
+    margin: 0 0 20px 0;
+    letter-spacing: 2px;
+  }
+  .scripture-quote {
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.8;
+    color: #4a3c28;
+    margin: 15px 0;
+    padding: 0 20px;
+  }
+  .scripture-reference {
+    font-size: 14px;
+    color: #8b7355;
+    margin-top: 10px;
+    font-style: normal;
+    letter-spacing: 1px;
+  }
+  .activity-item {
+    border: 1px solid #d4c5a9;
+    padding: 18px;
+    margin-bottom: 18px;
+    border-radius: 2px;
+    background-color: #f5f1e8;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .activity-item b {
+    font-size: 16px;
+    color: #2c2416;
+    font-weight: normal;
+    font-family: 'Coelacanth', 'Georgia', serif;
+  }
+  .activity-item small {
+    color: #6b5d4f;
+    font-family: 'Coelacanth', 'Georgia', serif;
+  }
+  .time-spent {
+    color: #8b4513;
+    font-weight: normal;
+    margin-top: 8px;
+    font-family: 'Coelacanth', 'Georgia', serif;
+  }
+  .current-url-label {
+    font-weight: normal;
+    margin-top: 10px;
+    color: #2c2416;
+    font-family: 'Coelacanth', 'Georgia', serif;
+  }
+  .url {
+    color: #8b4513;
+    word-break: break-all;
+    margin: 5px 0 8px 0;
+    font-size: 14px;
+  }
+  .url-history {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #d4c5a9;
+  }
+  .url-history h4 {
+    margin: 0 0 10px 0;
+    color: #2c2416;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: 'Coelacanth', 'Georgia', serif;
+  }
+  .url-history ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .url-history li {
+    padding: 12px;
+    margin-bottom: 8px;
+    background: #faf8f3;
+    border-radius: 2px;
+    border-left: 3px solid #8b4513;
+  }
+  .visit-url {
+    color: #8b4513;
+    word-break: break-all;
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  .visit-details {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #6b5d4f;
+  }
+  .visit-time {
+    color: #8b4513;
+    font-weight: normal;
+  }
+  .status-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: normal;
+    margin-left: 8px;
+    font-family: 'Coelacanth', 'Georgia', serif;
+    letter-spacing: 0.5px;
+  }
+  .status-badge.open {
+    background: #6b8e23;
+    color: #faf8f3;
+    border: 1px solid #556b1e;
+  }
+  .status-badge.closed {
+    background: #8b7355;
+    color: #faf8f3;
+    border: 1px solid #6b5d4f;
+  }
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding: 18px;
+    background: #f5f1e8;
+    border: 1px solid #d4c5a9;
+    border-radius: 2px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .control-btn {
+    padding: 10px 20px;
+    background: #8b4513;
+    color: #faf8f3;
+    border: 1px solid #6b3410;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: 'Coelacanth', 'Georgia', serif;
+    letter-spacing: 1px;
+    transition: background 0.3s;
+  }
+  .control-btn:hover {
+    background: #6b3410;
+  }
+  .filter-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  .filter-btn {
+    padding: 8px 16px;
+    background: #faf8f3;
+    color: #2c2416;
+    border: 1px solid #d4c5a9;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Coelacanth', 'Georgia', serif;
+    transition: all 0.3s;
+  }
+  .filter-btn:hover {
+    border-color: #8b4513;
+    color: #8b4513;
+  }
+  .filter-btn.active {
+    background: #8b4513;
+    color: #faf8f3;
+    border-color: #6b3410;
+  }
+  .activity-item.hidden {
+    display: none;
+  }
+</style>
+</head>
+<body>
+<div class="activity-container">
+  <div class="scripture-header">
+    <h1>Tab Activity</h1>
+    <div class="ornamental-divider"></div>
+    <div class="scripture-quote">
+      "Be sober and watch: because your adversary the devil, as a roaring lion, goeth about seeking whom he may devour."
+    </div>
+    <div class="scripture-reference">
+      — 1 Peter 5:8 (Douay-Rheims)
+    </div>
+  </div>
+  
+  <div class="controls">
+    <button id="refreshBtn" class="control-btn">↻ Refresh</button>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all">All Tabs</button>
+      <button class="filter-btn" data-filter="open">Open Tabs</button>
+      <button class="filter-btn" data-filter="closed">Closed Tabs</button>
+    </div>
+  </div>
+  <div id="log"></div>
+</div>
+
+<script src="activity.js"></script>
+</body>
+</html>

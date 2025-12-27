@@ -1,0 +1,22 @@
+{
+"manifest_version": 3,
+"name": "Intentional Tabs",
+"version": "1.0",
+"description": "Ask why you opened a tab and limit total tabs",
+"permissions": ["tabs", "storage", "notifications", "offscreen"],
+"background": {
+"service_worker": "background.js"
+},
+"chrome_url_overrides": {
+"newtab": "newtab.html"
+},
+"action": {
+"default_popup": "popup.html"
+},
+"web_accessible_resources": [
+{
+"resources": ["activity.html", "pomodoro-complete.wav", "self-destruct.wav", "fonts/*.otf"],
+"matches": ["<all_urls>"]
+}
+]
+}
