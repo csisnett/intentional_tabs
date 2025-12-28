@@ -86,3 +86,19 @@ window.location.href = `https://www.google.com/search?q=${searchQuery}`;
 });
 });
 });
+
+// Handle Enter key press
+document.getElementById('intent').addEventListener('keypress', (e) => {
+if (e.key === 'Enter') {
+e.preventDefault();
+const intent = document.getElementById('intent').value.trim();
+if (!intent) return;
+
+// Check if it's a link and click the appropriate button
+if (isURL(intent)) {
+document.getElementById('submit').click();
+} else {
+document.getElementById('search').click();
+}
+}
+});

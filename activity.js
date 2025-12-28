@@ -112,8 +112,19 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
     
     // Update filter and refresh display
     currentFilter = btn.dataset.filter;
+    
+    // Exit prayer mode when clicking filter buttons
+    if (btn.dataset.filter) {
+      document.body.classList.remove('prayer-mode');
+    }
+    
     displayActivity();
   });
+});
+
+// Pray button
+document.getElementById('prayBtn').addEventListener('click', () => {
+  document.body.classList.toggle('prayer-mode');
 });
 
 // Initial display
